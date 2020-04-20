@@ -1,0 +1,19 @@
+<h4>Formation name</h4>
+<%= @formation.name %>
+
+<h4>Users</h4>
+<% @formation.formation_users.each do |formation_user| %>
+<div><%= formation_user.user.email %>
+<td><%= link_to "Remove member",
+formation_formation_user_path(@formation, formation_user), method: :delete %></td></div>
+<% end %>
+
+
+
+<h4>Invite User</h4>
+<%= form_for [@formation, FormationUser.new] do |f| %>
+  <div>
+    <%= f.text_field :email, required: true %>
+  </div>
+  <%= f.submit "Invite" %>
+<% end %>

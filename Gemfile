@@ -15,9 +15,12 @@ gem 'sassc-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
+gem "pundit"
+gem "devise_invitable"
 
 group :development do
   gem 'web-console', '>= 3.3.0'
+  gem 'figaro'
 end
 
 group :development, :test do
