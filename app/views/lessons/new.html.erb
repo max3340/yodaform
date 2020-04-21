@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row justify-content-center mt-5">
+    <div class="col-6">
+      <div class="form-inscription">
+        <div class="inscription2">
+          <div class="new-formation-card p-4">
+            <%= simple_form_for([@lesson]) do |f| %>
+            <%= f.association :formation, label: "Votre formation :", selected: @formation_id %>
+            <%= f.input :name, as: :string, label: "Nom du cours", input_html: { autocomplete: 'off' }, placeholder: "Nom du cours", required: true %>
+            <%= f.label "Importer le cours:" %>
+            <br>
+            <%= f.file_field :cover_photo, direct_upload: true %>
+            <br>
+            <br>
+            <%= f.submit "Ajouter le cours", class: "btn btn-primary" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
