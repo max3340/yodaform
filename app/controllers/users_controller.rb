@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def dashboard
-    @formations = current_user.formations
+    @formations = Formation.order(:name).page(params[:page])
   end
 
 end
