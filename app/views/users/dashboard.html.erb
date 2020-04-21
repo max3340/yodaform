@@ -1,0 +1,9 @@
+<h1>Mes formations</h1>
+<% @formations.each do |formation| %>
+      <ul>
+        <li><%= formation.name %> Début: <%= formation.start_date %> Fin: <%= formation.end_date %></li>
+        <%= link_to 'Entrer', formation %>
+        <%= link_to 'Modifier', edit_formation_path(formation) %>
+        <%= link_to 'Supprimer', formation, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </ul>
+    <% end %>

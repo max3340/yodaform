@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
 
+  get '/dashboard', to: 'users#dashboard', as: :user_root
+
   resources :formations do
     resources :formation_users, path: :users, module: :formations
   end
