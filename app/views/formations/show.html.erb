@@ -17,3 +17,11 @@ formation_formation_user_path(@formation, formation_user), method: :delete %></t
   <%= f.submit "Inviter" %>
 <% end %>
 <% end %>
+
+<h4>Ajouter cours</h4>
+<%= link_to "ajouter cours", new_lesson_path  %>
+
+<h4>Les cours</h4>
+  <% @formation.lessons.each do |lesson| %>
+  <%= lesson.name %> <%= link_to "telecharger", rails_blob_path(lesson.cover_photo, disposition: "attachment") %>
+<% end %>
